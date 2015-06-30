@@ -1,0 +1,56 @@
+
+-----------------------------------------------------------------
+  pg_upgrade run on Mon Jun 29 15:34:57 2015
+-----------------------------------------------------------------
+
+check for "/usr/local/Cellar/postgresql/9.2/bin" failed: No such file or directory
+
+Try "pg_upgrade --help" for more information.
+
+-----------------------------------------------------------------
+  pg_upgrade run on Mon Jun 29 15:43:40 2015
+-----------------------------------------------------------------
+
+check for "/usr/local/var/postgres/postgres" failed: No such file or directory
+
+-----------------------------------------------------------------
+  pg_upgrade run on Mon Jun 29 15:46:09 2015
+-----------------------------------------------------------------
+
+You must identify the directory where the old cluster binaries reside.
+Please use the -b command-line option or the PGBINOLD environment variable.
+
+-----------------------------------------------------------------
+  pg_upgrade run on Mon Jun 29 16:11:06 2015
+-----------------------------------------------------------------
+
+You must identify the directory where the old cluster binaries reside.
+Please use the -b command-line option or the PGBINOLD environment variable.
+
+-----------------------------------------------------------------
+  pg_upgrade run on Mon Jun 29 16:11:32 2015
+-----------------------------------------------------------------
+
+You must identify the directory where the old cluster binaries reside.
+Please use the -b command-line option or the PGBINOLD environment variable.
+
+-----------------------------------------------------------------
+  pg_upgrade run on Mon Jun 29 16:11:44 2015
+-----------------------------------------------------------------
+
+You must identify the directory where the new cluster binaries reside.
+Please use the -B command-line option or the PGBINNEW environment variable.
+
+-----------------------------------------------------------------
+  pg_upgrade run on Mon Jun 29 16:31:58 2015
+-----------------------------------------------------------------
+
+You must identify the directory where the old cluster binaries reside.
+Please use the -b command-line option or the PGBINOLD environment variable.
+
+-----------------------------------------------------------------
+  pg_upgrade run on Mon Jun 29 16:33:03 2015
+-----------------------------------------------------------------
+
+check for "/usr/local/var/postgres.old/pg_tblspc" failed: No such file or directory
+
