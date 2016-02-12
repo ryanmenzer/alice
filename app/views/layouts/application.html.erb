@@ -3,9 +3,10 @@
 <head>
   <title>Alice</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'modules/polyfills','modules/systemjs','modules/rxjs','modules/angular2','modules/router' %>
   <script>
     System.config({
+      baseURL: 'assets',
       packages: {
         app: {
           format: 'register',
@@ -13,7 +14,7 @@
         }
       }
     });
-    System.import('/app/assets/javascripts/boot')
+    System.import('boot')
           .then(null, console.error.bind(console));
   </script>
   <%= csrf_meta_tags %>
