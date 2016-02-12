@@ -3,11 +3,7 @@
 <head>
   <title>Alice</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
-  <script src="/node_modules/systemjs/dist/system.src.js"></script>
-  <script src="/node_modules/rxjs/bundles/Rx.js"></script>
-  <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
-  <script src="/node_modules/angular2/bundles/router.dev.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script>
     System.config({
       packages: {
@@ -17,7 +13,7 @@
         }
       }
     });
-    System.import('app/assets/javascripts/boot')
+    System.import('/app/assets/javascripts/boot')
           .then(null, console.error.bind(console));
   </script>
   <%= csrf_meta_tags %>
