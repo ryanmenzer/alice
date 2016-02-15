@@ -54,4 +54,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get '/templates/:path.html' => 'templates#template', :constraints => { :path => /.+/  }
+
 end

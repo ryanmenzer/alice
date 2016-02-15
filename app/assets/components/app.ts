@@ -13,7 +13,7 @@ import {DashboardComponent} from './dashboard/dashboard';
     <base href="/">
     <router-outlet></router-outlet>
   `,
-  styleUrls: ['/assets/stylesheets/app.css'],
+  styleUrls: ['/assets/styles/app.css'],
   directives: [ROUTER_DIRECTIVES],
 })
 @RouteConfig([

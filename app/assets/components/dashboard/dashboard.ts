@@ -5,8 +5,8 @@ import {Router} from 'angular2/router';
 
 @Component({
   selector: 'my-dashboard',
-  templateUrl: './views/dashboard/views/dashboard.html',
-  styleUrls: ['./assets/stylesheets/dashboard/dashboard.css']
+  templateUrl: './templates/dashboard/views/dashboard.html',
+  styleUrls: ['./assets/dashboard/styles/dashboard.css']
 })
 export class DashboardComponent {
   // public heroes: Hero[] = [];

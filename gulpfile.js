@@ -38,7 +38,7 @@ gulp.task('html', function() {
     //     [ /\{\{*\s+\w+\}\}/, /\{\{\/if\}\}/ ]
     //   ]
     // }))
-    .pipe(gulp.dest('./app/views'))
+    .pipe(gulp.dest('./app/views/angular'))
 });
 
 // Typescript task

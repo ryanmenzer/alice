@@ -30,7 +30,7 @@ System.register(['angular2/core', 'angular2/router', './dashboard/dashboard'], f
                     core_1.Component({
                         selector: 'my-app',
                         template: "\n    <h1>{{title}}</h1>\n    <nav>\n      <a [routerLink]=\"['/Dashboard']\">Dashboard</a>\n      <a [routerLink]=\"['/Heroes']\">Heroes</a>\n    </nav>\n    <base href=\"/\">\n    <router-outlet></router-outlet>\n  ",
-                        styleUrls: ['/assets/stylesheets/app.css'],
+                        styleUrls: ['/assets/styles/app.css'],
                         directives: [router_1.ROUTER_DIRECTIVES],
                     }),
                     router_1.RouteConfig([
