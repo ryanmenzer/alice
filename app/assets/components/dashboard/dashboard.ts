@@ -5,10 +5,10 @@ import {Router} from 'angular2/router';
 
 @Component({
   selector: 'my-dashboard',
-  templateUrl: './app/dashboard/views/dashboard.html',
-  styleUrls: ['./app/dashboard/styles/dashboard.css']
+  templateUrl: './views/dashboard/views/dashboard.html',
+  styleUrls: ['./assets/stylesheets/dashboard/dashboard.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
   // public heroes: Hero[] = [];
   //
   // constructor(private _heroService: HeroService, private _router: Router) { }

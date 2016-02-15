@@ -19,4 +19,3 @@ System.register(['angular2/core', 'angular2/platform/browser', './app', 'angular
         }
     }
 });
-//# sourceMappingURL=boot.js.map
