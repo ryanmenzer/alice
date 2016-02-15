@@ -23,7 +23,9 @@ module Alice
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.enabled = false
-    # config.assets.paths << Rails.root.join("node_modules")
-    config.assets.precompile += ['modules/*']
+
+    config.assets.paths << Rails.root.join("node_modules")
+    # config.assets.precompile += ['modules/*']
+    # config.assets.precompile += %w(bundle.js)
   end
 end

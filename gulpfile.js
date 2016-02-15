@@ -1,21 +1,28 @@
 var gulp = require('gulp');
-var htmlmin = require('gulp-htmlmin');
+// var htmlmin = require('gulp-htmlmin');
 var sass = require('gulp-sass');
-var webpack = require('gulp-webpack');
+var runSequence = require('run-sequence'),
+
+var defaultAssets = {
+  components:{
+    sass:[
+      './app/assets/components/**/*.scss'
+    ],
+    views:[
+      './app/assets/components/**/views/*.html'
+    ]
+  }
+};
 
 
 gulp.task('sass', function () {
-  gulp.src('./app/assets/components/**/*.scss')
+  gulp.src(defaultAssets.components.sass)
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(gulp.dest('./app/assets/javascripts'));
-});
-
-gulp.task('sass:watch', function () {
-  gulp.watch('./app/assets/components/**/*.scss', ['sass']);
+    .pipe(gulp.dest('./app/assets/stylesheets'));
 });
 
 gulp.task('html', function() {
-  return gulp.src('./app/assets/components/*/views/*.html')
+  return gulp.src(defaultAssets.components.views)
     // .pipe(htmlmin({
     //   collapseWhitespace: true,
     //   customAttrAssign:[
@@ -25,12 +32,33 @@ gulp.task('html', function() {
     .pipe(gulp.dest('./app/assets/javascripts'))
 });
 
-gulp.task('webpack', function() {
-  return gulp.src('')
-  .pipe(webpack( require('./webpack.config.js') ))
-  .pipe(gulp.dest('./app/assets/javascripts/modules'))
+// // Typescript task
+// gulp.task('tsc', function () {
+// 	//var ts_config = plugins.typescript.creatproject('tsconfig.json');
+// 	gulp.src(defaultAssets.client.ts)
+// 	.pipe(plugins.typescript({
+// 		typescript: require('typescript'),
+// 		target: 'ES5',
+// 		module: 'commonjs',
+// 		declarationFiles: false,
+// 		noExternalResolve: true
+// 	}))
+// 	.pipe(plugins.rename(function (path) {
+// 		path.dirname = '';
+// 	}))
+// 	.pipe(gulp.dest('./build/'));
+// });
+
+gulp.task('watch', function() {
+  gulp.watch(defaultAssets.components.sass, ['sass']);
 });
 
-gulp.task('default', function() {
+// Lint CSS and JavaScript files.
+gulp.task('lint', function(done) {
+	runSequence('sass', 'tsc', ['csslint'], done);
+});
 
+// Run the project in development mode
+gulp.task('default', function(done) {
+	runSequence('env:dev', 'lint', ['nodemon', 'watch'], done);
 });

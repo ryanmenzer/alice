@@ -25,7 +25,6 @@
     "gulp-sass": "^2.1.1",
     "gulp-webpack": "^1.5.0",
     "path": "^0.12.7",
-    "typescript": "^1.7.5",
-    "webpack": "^1.12.13"
+    "typescript": "^1.7.5"
   }
 }

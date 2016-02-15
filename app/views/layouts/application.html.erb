@@ -3,7 +3,8 @@
 <head>
   <title>Alice</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'modules/polyfills','modules/systemjs','modules/rxjs','modules/angular2','modules/router' %>
+  <!-- <%= javascript_include_tag 'modules/polyfills','modules/systemjs','modules/rxjs','modules/angular2','modules/router' %> -->
+  <%= javascript_include_tag 'application' %>
   <script>
     System.config({
       baseURL: 'assets',
