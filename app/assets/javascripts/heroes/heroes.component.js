@@ -47,7 +47,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service', './hero-d
                 HeroesComponent = __decorate([
                     core_1.Component({
                         selector: 'my-heroes',
-                        templateUrl: '/templates/heroes/views/heroes.html',
+                        templateUrl: '/templates/heroes/heroes.html',
                         styleUrls: ['/assets/stylesheets/heroes.css'],
                         directives: [hero_detail_1.HeroDetailComponent]
                     }), 

@@ -6,7 +6,7 @@ import {Hero} from './hero';
 
 @Component({
   selector: 'my-heroes',
-  templateUrl: '/templates/heroes/views/heroes.html',
+  templateUrl: '/templates/heroes/heroes.html',
   styleUrls: ['/assets/stylesheets/heroes.css'],
   directives: [HeroDetailComponent]
 })

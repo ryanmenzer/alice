@@ -29,6 +29,9 @@ gulp.task('env:dev', function () {
 gulp.task('sass', function () {
   gulp.src(defaultAssets.components.sass)
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(rename(function (path) {
+      path.dirname = path.dirname.replace('styles', '');
+    }))
     .pipe(gulp.dest('./app/assets/stylesheets'));
 });
 
