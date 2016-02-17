@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var ts = require('gulp-typescript');
 var runSequence = require('run-sequence');
+var livereload = require('gulp-livereload');
 
 var defaultAssets = {
   components:{
@@ -64,9 +65,13 @@ gulp.task('tsc', function () {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(defaultAssets.components.views, ['html']);
-  gulp.watch(defaultAssets.components.sass, ['sass']);
-  gulp.watch(defaultAssets.components.ts, ['tsc']);
+  // Start livereload
+  livereload.listen();
+
+  // Add watch rules
+  gulp.watch(defaultAssets.components.views, ['html']).on('change', livereload.changed);
+  gulp.watch(defaultAssets.components.sass, ['sass']).on('change', livereload.changed);
+  gulp.watch(defaultAssets.components.ts, ['tsc']).on('change', livereload.changed);
 });
 
 // Lint CSS and JavaScript files.
