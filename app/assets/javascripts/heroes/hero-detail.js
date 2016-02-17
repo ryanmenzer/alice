@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../heroes/hero.service'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './hero.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/router', '../heroes/hero.service'], 
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, hero_service_1;
-    var DashboardComponent;
+    var HeroDetailComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -22,30 +22,31 @@ System.register(['angular2/core', 'angular2/router', '../heroes/hero.service'], 
                 hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
-            DashboardComponent = (function () {
-                function DashboardComponent(_heroService, _router) {
+            HeroDetailComponent = (function () {
+                function HeroDetailComponent(_heroService, _routeParams) {
                     this._heroService = _heroService;
-                    this._router = _router;
-                    this.heroes = [];
+                    this._routeParams = _routeParams;
                 }
-                DashboardComponent.prototype.ngOnInit = function () {
+                HeroDetailComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
+                    if (!this.hero) {
+                        var id = +this._routeParams.get('id');
+                        this._heroService.getHero(id).then(function (hero) { return _this.hero = hero; });
+                    }
                 };
-                DashboardComponent.prototype.gotoDetail = function (hero) {
-                    this._router.navigate(['HeroDetail', { id: hero.id }]);
-                };
-                DashboardComponent = __decorate([
+                HeroDetailComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-dashboard',
-                        templateUrl: './templates/dashboard/views/dashboard.html',
-                        styleUrls: ['./assets/dashboard/styles/dashboard.css']
+                        selector: 'my-hero-detail',
+                        templateUrl: '/templates/heroes/views/hero-detail.html',
+                        styleUrls: ['/assets/stylesheets/heroes/css/hero-detail.css'],
+                        directives: [router_1.ROUTER_DIRECTIVES],
+                        inputs: ['hero']
                     }), 
-                    __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
-                ], DashboardComponent);
-                return DashboardComponent;
+                    __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])
+                ], HeroDetailComponent);
+                return HeroDetailComponent;
             })();
-            exports_1("DashboardComponent", DashboardComponent);
+            exports_1("HeroDetailComponent", HeroDetailComponent);
         }
     }
 });

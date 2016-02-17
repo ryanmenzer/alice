@@ -4,11 +4,12 @@ var sass = require('gulp-sass');
 var ts = require('gulp-typescript');
 var runSequence = require('run-sequence');
 var livereload = require('gulp-livereload');
+var rename = require('gulp-rename');
 
 var defaultAssets = {
   components:{
     sass:[
-      './app/assets/components/**/*.scss'
+      './app/assets/components/**/styles/*.scss'
     ],
     views:[
       './app/assets/components/**/views/*.html'
@@ -33,6 +34,10 @@ gulp.task('sass', function () {
 
 gulp.task('html', function() {
   return gulp.src(defaultAssets.components.views)
+  .pipe(rename(function (path) {
+    path.dirname = path.dirname.replace('/views', '');
+  }))
+
     // .pipe(htmlmin({
     //   collapseWhitespace: true,
     //   customAttrAssign:[
@@ -76,7 +81,7 @@ gulp.task('watch', function() {
 
 // Lint CSS and JavaScript files.
 gulp.task('lint', function(done) {
-	runSequence('sass', 'tsc', done);
+	runSequence('sass', 'html', 'tsc', done);
 });
 
 // Run the project in development mode

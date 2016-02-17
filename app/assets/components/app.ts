@@ -1,6 +1,9 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {HeroesComponent} from './heroes/heroes.component';
+import {HeroDetailComponent} from './heroes/hero-detail';
 import {DashboardComponent} from './dashboard/dashboard';
+import {HeroService} from './heroes/hero.service';
 
 @Component({
   selector: 'my-app',
@@ -13,12 +16,15 @@ import {DashboardComponent} from './dashboard/dashboard';
     <base href="/">
     <router-outlet></router-outlet>
   `,
-  styleUrls: ['/assets/styles/app.css'],
+  styleUrls: ['/assets/stylesheets/app.css'],
   directives: [ROUTER_DIRECTIVES],
+  providers: [HeroService, ROUTER_PROVIDERS]
 })
 @RouteConfig([
   {path: '/', name: 'Default', redirectTo:['Dashboard']},
-  {path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true}
+  {path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true},
+  {path: '/heroes', name: 'Heroes', component: HeroesComponent},
+  {path: '/detail/:id', name: 'HeroDetail', component: HeroDetailComponent}
 ])
 export class AppComponent {
   public title = 'Tour of Heroes';
