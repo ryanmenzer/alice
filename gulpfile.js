@@ -74,7 +74,7 @@ gulp.task('tsc', function () {
 
 gulp.task('watch', function() {
   // Start livereload
-  livereload.listen;
+  livereload.listen();
 
   // Add watch rules
   gulp.watch(defaultAssets.components.views, ['html']).on('change', livereload.changed);
