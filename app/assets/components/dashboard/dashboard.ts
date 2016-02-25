@@ -2,11 +2,13 @@ import {Component, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {Hero} from '../heroes/hero';
 import {HeroService} from '../heroes/hero.service';
+import {DemoFormSkuBuilder} from '../surveys/surveys';
 
 @Component({
   selector: 'my-dashboard',
   templateUrl: './templates/dashboard/dashboard.html',
-  styleUrls: ['./assets/dashboard/dashboard.css']
+  styleUrls: ['./assets/dashboard/dashboard.css'],
+  directives: [DemoFromSkuBuilder]
 })
 export class DashboardComponent implements OnInit {
   public heroes: Hero[] = [];

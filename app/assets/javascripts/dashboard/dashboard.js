@@ -39,7 +39,8 @@ System.register(['angular2/core', 'angular2/router', '../heroes/hero.service'], 
                     core_1.Component({
                         selector: 'my-dashboard',
                         templateUrl: './templates/dashboard/dashboard.html',
-                        styleUrls: ['./assets/dashboard/dashboard.css']
+                        styleUrls: ['./assets/dashboard/dashboard.css'],
+                        directives: [DemoFromSkuBuilder]
                     }), 
                     __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
                 ], DashboardComponent);
