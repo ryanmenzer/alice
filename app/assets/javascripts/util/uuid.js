@@ -1,6 +1,4 @@
-System.register([], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register([], function(exports_1) {
     // taken from TodoMVC
     function uuid() {
         var i, random;
@@ -23,4 +21,3 @@ System.register([], function(exports_1, context_1) {
         }
     }
 });
-//# sourceMappingURL=uuid.js.map

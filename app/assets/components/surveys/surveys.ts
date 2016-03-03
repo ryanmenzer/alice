@@ -6,12 +6,12 @@ import {
 } from 'angular2/common';
 
 @Component({
-  selector: 'demo-form-sku-builder',
+  selector: 'survey-builder',
   directives: [FORM_DIRECTIVES],
   templateUrl: './templates/surveys/survey.html'
 })
 
-export class DemoFormSkuBuilder {
+export class SurveyBuilder {
   myForm: ControlGroup;
 
   constructor(fb: FormBuilder) {

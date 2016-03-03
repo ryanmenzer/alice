@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/common'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, common_1;
-    var DemoFormSkuBuilder;
+    var SurveyBuilder;
     return {
         setters:[
             function (core_1_1) {
@@ -19,26 +19,26 @@ System.register(['angular2/core', 'angular2/common'], function(exports_1) {
                 common_1 = common_1_1;
             }],
         execute: function() {
-            DemoFormSkuBuilder = (function () {
-                function DemoFormSkuBuilder(fb) {
+            SurveyBuilder = (function () {
+                function SurveyBuilder(fb) {
                     this.myForm = fb.group({
                         'sku': ['ABC123']
                     });
                 }
-                DemoFormSkuBuilder.prototype.onSubmit = function (value) {
+                SurveyBuilder.prototype.onSubmit = function (value) {
                     console.log('you submitted value: ', value);
                 };
-                DemoFormSkuBuilder = __decorate([
+                SurveyBuilder = __decorate([
                     core_1.Component({
-                        selector: 'demo-form-sku-builder',
+                        selector: 'survey-builder',
                         directives: [common_1.FORM_DIRECTIVES],
                         templateUrl: './templates/surveys/survey.html'
                     }), 
                     __metadata('design:paramtypes', [common_1.FormBuilder])
-                ], DemoFormSkuBuilder);
-                return DemoFormSkuBuilder;
+                ], SurveyBuilder);
+                return SurveyBuilder;
             })();
-            exports_1("DemoFormSkuBuilder", DemoFormSkuBuilder);
+            exports_1("SurveyBuilder", SurveyBuilder);
         }
     }
 });
