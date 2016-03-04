@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../heroes/hero.service', '../surveys/surveys'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../heroes/hero.service', '../surveys/surveys', '../services', '../messages/ChatExampleData'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', '../heroes/hero.service', '
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, hero_service_1, surveys_1;
+    var core_1, router_1, hero_service_1, surveys_1, services_1, ChatExampleData_1;
     var DashboardComponent;
     return {
         setters:[
@@ -23,13 +23,23 @@ System.register(['angular2/core', 'angular2/router', '../heroes/hero.service', '
             },
             function (surveys_1_1) {
                 surveys_1 = surveys_1_1;
+            },
+            function (services_1_1) {
+                services_1 = services_1_1;
+            },
+            function (ChatExampleData_1_1) {
+                ChatExampleData_1 = ChatExampleData_1_1;
             }],
         execute: function() {
             DashboardComponent = (function () {
-                function DashboardComponent(_heroService, _router) {
+                function DashboardComponent(messagesService, threadsService, userService, _heroService, _router) {
+                    this.messagesService = messagesService;
+                    this.threadsService = threadsService;
+                    this.userService = userService;
                     this._heroService = _heroService;
                     this._router = _router;
                     this.heroes = [];
+                    ChatExampleData_1.ChatExampleData.init(messagesService, threadsService, userService);
                 }
                 DashboardComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -45,7 +55,7 @@ System.register(['angular2/core', 'angular2/router', '../heroes/hero.service', '
                         styleUrls: ['./assets/dashboard/dashboard.css'],
                         directives: [surveys_1.SurveyBuilder]
                     }), 
-                    __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
+                    __metadata('design:paramtypes', [services_1.MessagesService, services_1.ThreadsService, services_1.UserService, hero_service_1.HeroService, router_1.Router])
                 ], DashboardComponent);
                 return DashboardComponent;
             })();
