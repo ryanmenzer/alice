@@ -6,7 +6,8 @@
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "start": "npm run tsc:w"
+    "start": "npm run tsc:w",
+    "typings": "typings"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.0",
     "systemjs": "0.19.20",
+    "underscore": "^1.8.3",
     "zone.js": "0.5.14"
   },
   "devDependencies": {
@@ -29,6 +31,7 @@
     "gulp-typescript": "^2.11.0",
     "gulp-webpack": "^1.5.0",
     "path": "^0.12.7",
-    "typescript": "^1.7.5"
+    "typescript": "^1.7.5",
+    "typings": "^0.6.9"
   }
 }
