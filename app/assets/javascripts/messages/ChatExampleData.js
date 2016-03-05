@@ -9,11 +9,11 @@ System.register(['../models'], function(exports_1) {
         execute: function() {
             // import * as moment from 'moment';
             // the person using the app us Juliet
-            me = new models_1.User('Juliet', require('images/avatars/female-avatar-1.png'));
-            ladycap = new models_1.User('Lady Capulet', require('images/avatars/female-avatar-2.png'));
-            echo = new models_1.User('Echo Bot', require('images/avatars/male-avatar-1.png'));
-            rev = new models_1.User('Reverse Bot', require('images/avatars/female-avatar-4.png'));
-            wait = new models_1.User('Waiting Bot', require('images/avatars/male-avatar-2.png'));
+            me = new models_1.User('Juliet', 'images/avatars/female-avatar-1.png');
+            ladycap = new models_1.User('Lady Capulet', 'images/avatars/female-avatar-2.png');
+            echo = new models_1.User('Echo Bot', 'images/avatars/male-avatar-1.png');
+            rev = new models_1.User('Reverse Bot', 'images/avatars/female-avatar-4.png');
+            wait = new models_1.User('Waiting Bot', 'images/avatars/male-avatar-2.png');
             tLadycap = new models_1.Thread('tLadycap', ladycap.name, ladycap.avatarSrc);
             tEcho = new models_1.Thread('tEcho', echo.name, echo.avatarSrc);
             tRev = new models_1.Thread('tRev', rev.name, rev.avatarSrc);

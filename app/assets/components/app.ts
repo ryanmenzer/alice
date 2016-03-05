@@ -5,6 +5,18 @@ import {HeroDetailComponent} from './heroes/hero-detail';
 import {DashboardComponent} from './dashboard/dashboard';
 import {HeroService} from './heroes/hero.service';
 
+import {ChatNavBar} from './dashboard/nav-bar';
+import {ChatThreads} from './messages/ChatThreads';
+import {ChatWindow} from './messages/ChatWindow';
+
+import {
+  MessagesService,
+  ThreadsService,
+  UserService
+} from './services';
+
+import {ChatExampleData} from './messages/ChatExampleData';
+
 @Component({
   selector: 'my-app',
   template: `
@@ -17,7 +29,9 @@ import {HeroService} from './heroes/hero.service';
     <router-outlet></router-outlet>
   `,
   styleUrls: ['/assets/stylesheets/app.css'],
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ChatNavBar,
+                 ChatThreads,
+                 ChatWindow, ROUTER_DIRECTIVES],
   providers: [HeroService, ROUTER_PROVIDERS]
 })
 @RouteConfig([
@@ -28,4 +42,9 @@ import {HeroService} from './heroes/hero.service';
 ])
 export class AppComponent {
   public title = 'Tour of Heroes';
+  constructor(public messagesService: MessagesService,
+                public threadsService: ThreadsService,
+                public userService: UserService) {
+    ChatExampleData.init(messagesService, threadsService, userService);
+                }
 }

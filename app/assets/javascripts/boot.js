@@ -1,5 +1,5 @@
-System.register(['angular2/core', 'angular2/platform/browser', './app', 'angular2/router'], function(exports_1) {
-    var core_1, browser_1, app_1, router_1;
+System.register(['angular2/core', 'angular2/platform/browser', './app', 'angular2/router', './services'], function(exports_1) {
+    var core_1, browser_1, app_1, router_1, services_1;
     return {
         setters:[
             function (core_1_1) {
@@ -13,9 +13,12 @@ System.register(['angular2/core', 'angular2/platform/browser', './app', 'angular
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (services_1_1) {
+                services_1 = services_1_1;
             }],
         execute: function() {
-            browser_1.bootstrap(app_1.AppComponent, [router_1.ROUTER_PROVIDERS, core_1.provide(router_1.LocationStrategy, { useClass: router_1.HashLocationStrategy })]);
+            browser_1.bootstrap(app_1.AppComponent, [router_1.ROUTER_PROVIDERS, core_1.provide(router_1.LocationStrategy, { useClass: router_1.HashLocationStrategy }), services_1.servicesInjectables]);
         }
     }
 });

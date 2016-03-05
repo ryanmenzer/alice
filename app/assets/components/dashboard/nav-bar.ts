@@ -10,7 +10,7 @@ import * as _ from 'underscore';
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="https://ng-book.com/2">
-          <img src="${require('images/logos/ng-book-2-minibook.png')}"/>
+          <img src="('images/logos/ng-book-2-minibook.png')"/>
            ng-book 2
         </a>
       </div>

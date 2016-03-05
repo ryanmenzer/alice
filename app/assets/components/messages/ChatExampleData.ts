@@ -5,11 +5,11 @@ import {MessagesService, ThreadsService,
 // import * as moment from 'moment';
 
 // the person using the app us Juliet
-let me: User      = new User('Juliet', require('images/avatars/female-avatar-1.png'));
-let ladycap: User = new User('Lady Capulet', require('images/avatars/female-avatar-2.png'));
-let echo: User    = new User('Echo Bot', require('images/avatars/male-avatar-1.png'));
-let rev: User     = new User('Reverse Bot', require('images/avatars/female-avatar-4.png'));
-let wait: User    = new User('Waiting Bot', require('images/avatars/male-avatar-2.png'));
+let me: User      = new User('Juliet', 'images/avatars/female-avatar-1.png');
+let ladycap: User = new User('Lady Capulet', 'images/avatars/female-avatar-2.png');
+let echo: User    = new User('Echo Bot', 'images/avatars/male-avatar-1.png');
+let rev: User     = new User('Reverse Bot', 'images/avatars/female-avatar-4.png');
+let wait: User    = new User('Waiting Bot', 'images/avatars/male-avatar-2.png');
 
 let tLadycap: Thread = new Thread('tLadycap', ladycap.name, ladycap.avatarSrc);
 let tEcho: Thread    = new Thread('tEcho', echo.name, echo.avatarSrc);
