@@ -11,7 +11,7 @@ interface IMessagesOperation extends Function {
 @Injectable()
 export class MessagesService {
   // a stream that publishes new messages only once
-  newMessages: Subject<Message> = new Subject<Message>();
+  newMessages = new Subject<Message>();
 
   // `messages` is a stream that emits an array of the most up to date messages
   messages: Observable<Message[]>;

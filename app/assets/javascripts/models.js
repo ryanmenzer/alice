@@ -1,4 +1,6 @@
-System.register(['./util/uuid'], function(exports_1) {
+System.register(['./util/uuid'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var uuid_1;
     var User, Thread, Message;
     return {
@@ -14,7 +16,7 @@ System.register(['./util/uuid'], function(exports_1) {
                     this.id = uuid_1.uuid();
                 }
                 return User;
-            })();
+            }());
             exports_1("User", User);
             Thread = (function () {
                 function Thread(id, name, avatarSrc) {
@@ -23,7 +25,7 @@ System.register(['./util/uuid'], function(exports_1) {
                     this.avatarSrc = avatarSrc;
                 }
                 return Thread;
-            })();
+            }());
             exports_1("Thread", Thread);
             Message = (function () {
                 function Message(obj) {
@@ -35,7 +37,7 @@ System.register(['./util/uuid'], function(exports_1) {
                     this.thread = obj && obj.thread || null;
                 }
                 return Message;
-            })();
+            }());
             exports_1("Message", Message);
         }
     }

@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/common'], function(exports_1, context_1) {
+System.register(['angular2/core', 'moment'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,37 +10,35 @@ System.register(['angular2/core', 'angular2/common'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1;
-    var SurveyBuilder;
+    var core_1, moment;
+    var FromNowPipe, fromNowPipeInjectables;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (common_1_1) {
-                common_1 = common_1_1;
+            function (moment_1) {
+                moment = moment_1;
             }],
         execute: function() {
-            SurveyBuilder = (function () {
-                function SurveyBuilder(fb) {
-                    this.myForm = fb.group({
-                        'sku': ['ABC123']
-                    });
+            FromNowPipe = (function () {
+                function FromNowPipe() {
                 }
-                SurveyBuilder.prototype.onSubmit = function (value) {
-                    console.log('you submitted value: ', value);
+                FromNowPipe.prototype.transform = function (value, args) {
+                    return moment(value).fromNow();
                 };
-                SurveyBuilder = __decorate([
-                    core_1.Component({
-                        selector: 'survey-builder',
-                        directives: [common_1.FORM_DIRECTIVES],
-                        templateUrl: './templates/surveys/survey.html'
+                FromNowPipe = __decorate([
+                    core_1.Pipe({
+                        name: 'fromNow'
                     }), 
-                    __metadata('design:paramtypes', [common_1.FormBuilder])
-                ], SurveyBuilder);
-                return SurveyBuilder;
+                    __metadata('design:paramtypes', [])
+                ], FromNowPipe);
+                return FromNowPipe;
             }());
-            exports_1("SurveyBuilder", SurveyBuilder);
+            exports_1("FromNowPipe", FromNowPipe);
+            exports_1("fromNowPipeInjectables", fromNowPipeInjectables = [
+                core_1.bind(FromNowPipe).toValue(FromNowPipe)
+            ]);
         }
     }
 });

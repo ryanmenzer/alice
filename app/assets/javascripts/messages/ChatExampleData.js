@@ -1,4 +1,6 @@
-System.register(['../models'], function(exports_1) {
+System.register(['../models'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var models_1;
     var me, ladycap, echo, rev, wait, tLadycap, tEcho, tRev, tWait, initialMessages, ChatExampleData;
     return {
@@ -104,7 +106,7 @@ System.register(['../models'], function(exports_1) {
                     }, null);
                 };
                 return ChatExampleData;
-            })();
+            }());
             exports_1("ChatExampleData", ChatExampleData);
         }
     }

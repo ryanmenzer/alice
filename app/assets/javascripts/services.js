@@ -1,4 +1,6 @@
-System.register(['./messages/messages.service', './messages/threads.service', './user/user.service'], function(exports_1) {
+System.register(['./messages/messages.service', './messages/threads.service', './user/user.service'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var messages_service_1, threads_service_1, user_service_1;
     var servicesInjectables;
     var exportedNames_1 = {

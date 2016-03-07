@@ -20,12 +20,14 @@ import {ChatExampleData} from './messages/ChatExampleData';
 @Component({
   selector: 'my-app',
   template: `
+    <nav-bar></nav-bar>
     <h1>{{title}}</h1>
     <nav>
       <a [routerLink]="['/Dashboard']">Dashboard</a>
       <a [routerLink]="['/Heroes']">Heroes</a>
     </nav>
     <base href="/">
+
     <router-outlet></router-outlet>
   `,
   styleUrls: ['/assets/stylesheets/app.css'],

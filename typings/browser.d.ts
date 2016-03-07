@@ -2,6 +2,7 @@
 /// <reference path="browser/ambient/es6-shim/es6-shim.d.ts" />
 /// <reference path="browser/ambient/hammerjs/hammerjs.d.ts" />
 /// <reference path="browser/ambient/jasmine/jasmine.d.ts" />
+/// <reference path="browser/ambient/moment/moment.d.ts" />
 /// <reference path="browser/ambient/ng2/ng2.d.ts" />
 /// <reference path="browser/ambient/node/node.d.ts" />
 /// <reference path="browser/ambient/selenium-webdriver/selenium-webdriver.d.ts" />

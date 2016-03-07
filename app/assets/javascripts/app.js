@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/router', './heroes/heroes.component', './heroes/hero-detail', './dashboard/dashboard', './heroes/hero.service', './dashboard/nav-bar', './messages/ChatThreads', './messages/ChatWindow', './services', './messages/ChatExampleData'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './heroes/heroes.component', './heroes/hero-detail', './dashboard/dashboard', './heroes/hero.service', './dashboard/nav-bar', './messages/ChatThreads', './messages/ChatWindow', './services', './messages/ChatExampleData'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,7 +59,7 @@ System.register(['angular2/core', 'angular2/router', './heroes/heroes.component'
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>{{title}}</h1>\n    <nav>\n      <a [routerLink]=\"['/Dashboard']\">Dashboard</a>\n      <a [routerLink]=\"['/Heroes']\">Heroes</a>\n    </nav>\n    <base href=\"/\">\n    <router-outlet></router-outlet>\n  ",
+                        template: "\n    <nav-bar></nav-bar>\n    <h1>{{title}}</h1>\n    <nav>\n      <a [routerLink]=\"['/Dashboard']\">Dashboard</a>\n      <a [routerLink]=\"['/Heroes']\">Heroes</a>\n    </nav>\n    <base href=\"/\">\n\n    <router-outlet></router-outlet>\n  ",
                         styleUrls: ['/assets/stylesheets/app.css'],
                         directives: [nav_bar_1.ChatNavBar,
                             ChatThreads_1.ChatThreads,
@@ -73,7 +75,7 @@ System.register(['angular2/core', 'angular2/router', './heroes/heroes.component'
                     __metadata('design:paramtypes', [services_1.MessagesService, services_1.ThreadsService, services_1.UserService])
                 ], AppComponent);
                 return AppComponent;
-            })();
+            }());
             exports_1("AppComponent", AppComponent);
         }
     }
