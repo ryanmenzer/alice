@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/common', '../services', '../models', '../util/FromNowPipe'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/common', '../services', '../util/FromNowPipe', '../models'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/common', '../services', '../models',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1, services_1, models_1, FromNowPipe_1;
+    var core_1, common_1, services_1, FromNowPipe_1, models_1;
     var ChatMessage, ChatWindow;
     return {
         setters:[
@@ -23,11 +23,11 @@ System.register(['angular2/core', 'angular2/common', '../services', '../models',
             function (services_1_1) {
                 services_1 = services_1_1;
             },
-            function (models_1_1) {
-                models_1 = models_1_1;
-            },
             function (FromNowPipe_1_1) {
                 FromNowPipe_1 = FromNowPipe_1_1;
+            },
+            function (models_1_1) {
+                models_1 = models_1_1;
             }],
         execute: function() {
             ChatMessage = (function () {
@@ -103,7 +103,7 @@ System.register(['angular2/core', 'angular2/common', '../services', '../models',
                         selector: 'chat-window',
                         directives: [ChatMessage,
                             common_1.FORM_DIRECTIVES],
-                        changeDetection: core_1.ChangeDetectionStrategy.OnPushObserve,
+                        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
                         template: "\n    <div class=\"chat-window-container\">\n      <div class=\"chat-window\">\n        <div class=\"panel-container\">\n          <div class=\"panel panel-default\">\n\n            <div class=\"panel-heading top-bar\">\n              <div class=\"panel-title-container\">\n                <h3 class=\"panel-title\">\n                  <span class=\"glyphicon glyphicon-comment\"></span>\n                  Chat - {{currentThread.name}}\n                </h3>\n              </div>\n              <div class=\"panel-buttons-container\">\n                <!-- you could put minimize or close buttons here -->\n              </div>\n            </div>\n\n            <div class=\"panel-body msg-container-base\">\n              <chat-message\n                   *ngFor=\"#message of messages | async\"\n                   [message]=\"message\">\n              </chat-message>\n            </div>\n\n            <div class=\"panel-footer\">\n              <div class=\"input-group\">\n                <input type=\"text\"\n                       class=\"chat-input\"\n                       placeholder=\"Write your message here...\"\n                       (keydown.enter)=\"onEnter($event)\"\n                       [(ngModel)]=\"draftMessage.text\" />\n                <span class=\"input-group-btn\">\n                  <button class=\"btn-chat\"\n                     (click)=\"onEnter($event)\"\n                     >Send</button>\n                </span>\n              </div>\n            </div>\n\n          </div>\n        </div>\n      </div>\n    </div>\n  "
                     }), 
                     __metadata('design:paramtypes', [services_1.MessagesService, services_1.ThreadsService, services_1.UserService, core_1.ElementRef])

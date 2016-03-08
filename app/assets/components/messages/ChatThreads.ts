@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy
 } from 'angular2/core';
 import {ThreadsService} from '../services';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Rx';
 import {Thread} from '../models';
 
 @Component({
@@ -52,7 +52,7 @@ class ChatThread implements OnInit {
 @Component({
   selector: 'chat-threads',
   directives: [ChatThread],
-  changeDetection: ChangeDetectionStrategy.OnPushObserve,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <!-- conversations -->
     <div class="row">

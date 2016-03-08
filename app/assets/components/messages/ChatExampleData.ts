@@ -1,7 +1,6 @@
 /* tslint:disable:max-line-length */
 import {User, Thread, Message} from '../models';
-import {MessagesService, ThreadsService,
-        UserService} from '../services';
+import {MessagesService, ThreadsService, UserService} from '../services';
 // import * as moment from 'moment';
 
 // the person using the app us Juliet

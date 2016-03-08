@@ -58,7 +58,7 @@ System.register(['angular2/core', '../services'], function(exports_1, context_1)
                     core_1.Component({
                         selector: 'chat-threads',
                         directives: [ChatThread],
-                        changeDetection: core_1.ChangeDetectionStrategy.OnPushObserve,
+                        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
                         template: "\n    <!-- conversations -->\n    <div class=\"row\">\n      <div class=\"conversation-wrap\">\n\n        <chat-thread\n             *ngFor=\"#thread of threads | async\"\n             [thread]=\"thread\">\n        </chat-thread>\n\n      </div>\n    </div>\n  "
                     }), 
                     __metadata('design:paramtypes', [services_1.ThreadsService])

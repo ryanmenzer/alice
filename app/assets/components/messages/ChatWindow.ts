@@ -10,7 +10,7 @@ import {
   ThreadsService,
   UserService
 } from '../services';
-// import {FromNowPipe} from '../util/FromNowPipe';
+import {FromNowPipe} from '../util/FromNowPipe';
 import {Observable} from 'rxjs/Rx';
 import {User, Thread, Message} from '../models';
 import {FromNowPipe} from '../util/FromNowPipe';
@@ -66,7 +66,7 @@ export class ChatMessage implements OnInit {
   selector: 'chat-window',
   directives: [ChatMessage,
                FORM_DIRECTIVES],
-  changeDetection: ChangeDetectionStrategy.OnPushObserve,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="chat-window-container">
       <div class="chat-window">
