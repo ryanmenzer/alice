@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../heroes/hero.service', '../surveys/surveys'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../heroes/hero.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../heroes/hero.service', '
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, hero_service_1, surveys_1;
+    var core_1, router_1, hero_service_1;
     var DashboardComponent;
     return {
         setters:[
@@ -22,9 +22,6 @@ System.register(['angular2/core', 'angular2/router', '../heroes/hero.service', '
             },
             function (hero_service_1_1) {
                 hero_service_1 = hero_service_1_1;
-            },
-            function (surveys_1_1) {
-                surveys_1 = surveys_1_1;
             }],
         execute: function() {
             DashboardComponent = (function () {
@@ -45,7 +42,6 @@ System.register(['angular2/core', 'angular2/router', '../heroes/hero.service', '
                         selector: 'my-dashboard',
                         templateUrl: './templates/dashboard/dashboard.html',
                         styleUrls: ['./assets/dashboard/dashboard.css'],
-                        directives: [surveys_1.SurveyBuilder]
                     }), 
                     __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
                 ], DashboardComponent);

@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'rxjs', '../models', './messages.service', 'underscore'], function(exports_1, context_1) {
+System.register(['angular2/core', 'rxjs/Rx', '../models', './messages.service', 'underscore'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,15 @@ System.register(['angular2/core', 'rxjs', '../models', './messages.service', 'un
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, rxjs_1, models_1, messages_service_1, _;
+    var core_1, Rx_1, models_1, messages_service_1, _;
     var ThreadsService, threadsServiceInjectables;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (rxjs_1_1) {
-                rxjs_1 = rxjs_1_1;
+            function (Rx_1_1) {
+                Rx_1 = Rx_1_1;
             },
             function (models_1_1) {
                 models_1 = models_1_1;
@@ -34,7 +34,7 @@ System.register(['angular2/core', 'rxjs', '../models', './messages.service', 'un
                 function ThreadsService(messagesService) {
                     this.messagesService = messagesService;
                     // `currentThread` contains the currently selected thread
-                    this.currentThread = new rxjs_1.BehaviorSubject(new models_1.Thread());
+                    this.currentThread = new Rx_1.BehaviorSubject(new models_1.Thread());
                     this.threads = messagesService.messages
                         .map(function (messages) {
                         var threads = {};

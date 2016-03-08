@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'rxjs'], function(exports_1, context_1) {
+System.register(['angular2/core', 'rxjs/Rx'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,29 +10,29 @@ System.register(['angular2/core', 'rxjs'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, rxjs_1;
+    var core_1, Rx_1;
     var initialMessages, MessagesService, messagesServiceInjectables;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (rxjs_1_1) {
-                rxjs_1 = rxjs_1_1;
+            function (Rx_1_1) {
+                Rx_1 = Rx_1_1;
             }],
         execute: function() {
             initialMessages = [];
             MessagesService = (function () {
                 function MessagesService() {
                     // a stream that publishes new messages only once
-                    this.newMessages = new rxjs_1.Subject();
+                    this.newMessages = new Rx_1.Subject();
                     // `updates` receives _operations_ to be applied to our `messages`
                     // it's a way we can perform changes on *all* messages (that are currently
                     // stored in `messages`)
-                    this.updates = new rxjs_1.Subject();
+                    this.updates = new Rx_1.Subject();
                     // action streams
-                    this.create = new rxjs_1.Subject();
-                    this.markThreadAsRead = new rxjs_1.Subject();
+                    this.create = new Rx_1.Subject();
+                    this.markThreadAsRead = new Rx_1.Subject();
                     this.messages = this.updates
                         .scan(function (messages, operation) {
                         return operation(messages);

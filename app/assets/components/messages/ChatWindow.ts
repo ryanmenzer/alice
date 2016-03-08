@@ -11,13 +11,14 @@ import {
   UserService
 } from '../services';
 // import {FromNowPipe} from '../util/FromNowPipe';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Rx';
 import {User, Thread, Message} from '../models';
+import {FromNowPipe} from '../util/FromNowPipe';
 
 @Component({
   inputs: ['message'],
   selector: 'chat-message',
-  // pipes: [FromNowPipe],
+  pipes: [FromNowPipe],
   template: `
   <div class="msg-container"
        [ngClass]="{'base-sent': !incoming, 'base-receive': incoming}">
