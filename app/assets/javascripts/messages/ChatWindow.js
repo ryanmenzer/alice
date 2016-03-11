@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/common', '../services', '../util/FromNowPipe', '../models'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/common', '../services', '../models'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/common', '../services', '../util/Fro
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1, services_1, FromNowPipe_1, models_1;
+    var core_1, common_1, services_1, models_1;
     var ChatMessage, ChatWindow;
     return {
         setters:[
@@ -22,9 +22,6 @@ System.register(['angular2/core', 'angular2/common', '../services', '../util/Fro
             },
             function (services_1_1) {
                 services_1 = services_1_1;
-            },
-            function (FromNowPipe_1_1) {
-                FromNowPipe_1 = FromNowPipe_1_1;
             },
             function (models_1_1) {
                 models_1 = models_1_1;
@@ -48,8 +45,7 @@ System.register(['angular2/core', 'angular2/common', '../services', '../util/Fro
                     core_1.Component({
                         inputs: ['message'],
                         selector: 'chat-message',
-                        pipes: [FromNowPipe_1.FromNowPipe],
-                        template: "\n  <div class=\"msg-container\"\n       [ngClass]=\"{'base-sent': !incoming, 'base-receive': incoming}\">\n\n    <div class=\"avatar\"\n         *ngIf=\"!incoming\">\n      <img src=\"{{message.author.avatarSrc}}\">\n    </div>\n\n    <div class=\"messages\"\n      [ngClass]=\"{'msg-sent': !incoming, 'msg-receive': incoming}\">\n      <p>{{message.text}}</p>\n      <time>{{message.sender}} \u2022 {{message.sentAt | fromNow}}</time>\n    </div>\n\n    <div class=\"avatar\"\n         *ngIf=\"incoming\">\n      <img src=\"{{message.author.avatarSrc}}\">\n    </div>\n  </div>\n  "
+                        template: "\n  <div class=\"msg-container\"\n       [ngClass]=\"{'base-sent': !incoming, 'base-receive': incoming}\">\n\n    <div class=\"avatar\"\n         *ngIf=\"!incoming\">\n      <img src=\"{{message.author.avatarSrc}}\">\n    </div>\n\n    <div class=\"messages\"\n      [ngClass]=\"{'msg-sent': !incoming, 'msg-receive': incoming}\">\n      <p>{{message.text}}</p>\n      <time>{{message.sender}} \u2022 {{message.sentAt}}</time>\n    </div>\n\n    <div class=\"avatar\"\n         *ngIf=\"incoming\">\n      <img src=\"{{message.author.avatarSrc}}\">\n    </div>\n  </div>\n  "
                     }), 
                     __metadata('design:paramtypes', [services_1.UserService])
                 ], ChatMessage);
